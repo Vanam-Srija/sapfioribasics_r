@@ -1,0 +1,52 @@
+<mvc:View 
+    controllerName="com.ust.northwind.nwpractice.controller.Employee"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:table="sap.ui.table" 
+    displayBlock="true">
+    
+    <Page
+		id="employeeListPage"
+		title="{i18n>EmployeeList}"
+		showNavButton="true"
+		class="sapUiResponsiveContentPadding">
+		<content>
+			 <VBox>
+                <Table id="employeeTable" items="{/Employees}">
+                    <columns>
+                        <Column width="12em">
+                            <Text text="Employee ID"/>
+                        </Column>
+                        <Column width="12em">
+                            <Text text="Last Name" />
+                        </Column>
+                        <Column width="12em">
+                            <Text text="First Name" />
+                        </Column>
+                        <Column width="12em">
+                            <Text text="Title" />
+                        </Column>
+                        <Column width="12em">
+                            <Text text="Title Of Courtesy" />
+                        </Column>
+                        <Column width="12em">
+                            <Text text="Birth Date" />
+                        </Column>
+                    </columns>
+                    <items>
+                    <ColumnListItem vAlign="Middle" type="Navigation" press="onListItemPress">
+                        <cells>
+                            <Text text="{EmployeeID}" />
+                            <Text text="{LastName}" />
+                            <Text text="{FirstName}" />
+                            <Text text="{Title}" />
+                            <Text text="{TitleOfCourtesy}" />
+                            <Text text="{BirthDate}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            </VBox>
+		</content>
+	</Page>
+</mvc:View>

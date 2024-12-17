@@ -1,0 +1,10 @@
+<mvc:View controllerName="com.ust.northwind.nwpractice.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page1" title="{i18n>title}">
+        <content>
+         <Button id="employeeListBtn" text="{i18n>ShowEmployeeList}" 
+           press="onEmployeePress" class="sapUiTinyMarginEnd"/>
+        </content>
+    </Page>
+</mvc:View>

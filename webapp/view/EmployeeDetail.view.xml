@@ -1,0 +1,110 @@
+<mvc:View
+    controllerName="com.ust.northwind.nwpractice.controller.EmployeeDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+
+    <Page title="{i18n>employeeDetail} {selectedEmployee>/EmployeeID}">
+        <content>
+            <Panel
+                id="employeePanel"
+                width="auto"
+                class="sapUiResponsiveMargin sapUiNoContentPadding">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{i18n>EmployeeIDColon} {selectedEmployee>/EmployeeID}" level="H2"/>
+                        <ToolbarSpacer />
+                    </Toolbar>
+                </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        editable="false"
+                        layout="ResponsiveGridLayout"
+                        labelSpanL="3" 
+                        labelSpanM="3" 
+                        emptySpanL="4" 
+                        emptySpanM="4"
+                        columnsL="1" 
+                        columnsM="1">
+                        
+                        <f:content>
+                            <Label text="{i18n>formEmployeeID}"/>
+                            <Text text="{selectedEmployee>/EmployeeID}"/> 
+
+                            <Label text="{i18n>formFirstName}"/>
+                            <Text text="{selectedEmployee>/FirstName}"/> 
+
+                            <Label text="{i18n>formLastName}"/>
+                            <Text text="{selectedEmployee>/LastName}"/> 
+
+                            <Label text="{i18n>formTitle}"/>
+                            <Text text="{selectedEmployee>/Title}"/>
+
+                            <Label text="{i18n>formAddress}"/>
+                            <Text text="{selectedEmployee>/Address}"/>
+
+                            <Label text="{i18n>formCity}"/>
+                            <Text text="{selectedEmployee>/City}"/> 
+
+                            <Label text="{i18n>formCountry}"/>
+                            <Text text="{selectedEmployee>/Country}"/>
+
+                            <Label text="{i18n>formPhoneHome}"/>
+                            <Text text="{selectedEmployee>/HomePhone}"/>
+                            
+                            <Label text="{i18n>formPostalCode}"/>
+                            <Text text="{selectedEmployee>/PostalCode}"/> 
+
+                            <Label text="{i18n>formPhoto}"/>
+                            <Image src="{selectedEmployee>/Photo}" width="100px" height="100px"/>
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+
+            <!-- New Section for Orders -->
+            <Panel
+                id="ordersPanel"
+                width="auto"
+                class="sapUiResponsiveMargin sapUiNoContentPadding">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{i18n>ordersTitle}" level="H2"/>
+                        <ToolbarSpacer />
+                    </Toolbar>
+                </headerToolbar>
+                <content>
+                    <Table items="{orders>/}">
+                        <headerToolbar>
+                            <Toolbar>
+                                <Title text="{i18n>ordersTitle}"/>
+                            </Toolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column>
+                                <Text text="{i18n>orderID}"/>
+                            </Column>
+                            <Column>
+                                <Text text="{i18n>orderDate}"/>
+                            </Column>
+                            <Column>
+                                <Text text="{i18n>employeeID}"/>
+                            </Column>
+                            <!-- Add more columns as necessary -->
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{orders>OrderID}"/>
+                                    <Text text="{orders>OrderDate}"/>
+                                    <Text text="{orders>EmployeeID}"/>
+                                    <!-- Bind additional cells as necessary -->
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
